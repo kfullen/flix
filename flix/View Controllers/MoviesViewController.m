@@ -17,11 +17,14 @@
 
 @implementation MoviesViewController
 
+NSString *CellIdentifier = @"com.codepath.MyFirstTableViewCell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=7230e97fd50e8192bb968d8ac1d2e0ef"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -56,7 +59,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
     (NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDictionary *movie = self.movies[indexPath.row];
     cell.textLabel.text = movie[@"title"];
