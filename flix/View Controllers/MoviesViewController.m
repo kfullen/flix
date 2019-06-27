@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *movieActivityIndicator;
 
 @end
 
@@ -24,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.movieActivityIndicator startAnimating];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -37,6 +38,7 @@
 }
 
 - (void) fetchMovies {
+    // Get the array of movies
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=7230e97fd50e8192bb968d8ac1d2e0ef"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -47,14 +49,14 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            //NSLog(@"%@", dataDictionary);
+            // Store movies in a property to use elsewhere
             self.movies = dataDictionary[@"results"];
             
-            
+            // Reload your table view data
             [self.tableView reloadData];
-            // TODO: Get the array of movies
-            // TODO: Store the movies in a property to use elsewhere
-            // TODO: Reload your table view data
+            
+            [self.movieActivityIndicator stopAnimating];
+            
         }
         [self.refreshControl endRefreshing];
     }];
