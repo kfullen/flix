@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *SmallDetailsImageView;
 @property (weak, nonatomic) IBOutlet UILabel *DetailsTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DetailsOverviewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *DetailsReleaseLabel;
 
 @end
 
@@ -40,11 +41,16 @@
     self.SmallDetailsImageView.image = nil;
     [self.SmallDetailsImageView setImageWithURL:posterURL];
     
+    
     self.DetailsTitleLabel.text = self.movie[@"title"];
     self.DetailsOverviewLabel.text = self.movie[@"overview"];
+    self.DetailsReleaseLabel.text = self.movie[@"release_date"];
     
-    [self.DetailsTitleLabel sizeToFit];
+    //[self.DetailsTitleLabel sizeToFit];
     [self.DetailsOverviewLabel sizeToFit];
+    [self.DetailsReleaseLabel sizeToFit];
+    
+    
 }
 
 /*
