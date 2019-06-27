@@ -101,7 +101,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BTt-A5-wq1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="27B-L1-y1h" kind="relationship" relationship="viewControllers" id="GLK-if-Tni"/>
@@ -176,7 +176,7 @@
         <scene sceneID="KdR-rq-DTQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27B-L1-y1h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="P9l-ob-eYd"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" selectedImage="now_playing_tabbar_item" id="P9l-ob-eYd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c7l-GV-Jgt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -195,7 +195,7 @@
         <scene sceneID="TIa-Qi-e5V">
             <objects>
                 <navigationController id="rAA-yb-WtA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Popular" id="Iwr-1Z-ZNt"/>
+                    <tabBarItem key="tabBarItem" title="Popular" image="ticket_tabbar_icon" selectedImage="ticket_tabbar_icon" id="Iwr-1Z-ZNt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kJh-IJ-mFj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,4 +209,8 @@
             <point key="canvasLocation" x="1497" y="484"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="now_playing_tabbar_item" width="21" height="21"/>
+        <image name="ticket_tabbar_icon" width="25" height="25"/>
+    </resources>
 </document>
