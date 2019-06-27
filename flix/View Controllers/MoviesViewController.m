@@ -52,8 +52,8 @@
                                                                    style:UIAlertActionStyleCancel
                                                                  handler:^(UIAlertAction * _Nonnull action)
             {
-                                               // handle cancel response here. Doing nothing will dismiss the view.
-                                               [self fetchMovies];
+                // handle cancel response here. Doing nothing will dismiss the view.
+                [self fetchMovies];
                                                
             }];
             
