@@ -25,6 +25,12 @@
     self.collectionView.delegate = self;
     
     [self fetchMovies];
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
+    CGFloat postersPerLine = 3;
+    CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
+    CGFloat itemHeight = itemWidth * 1.5;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
 - (void) fetchMovies {
