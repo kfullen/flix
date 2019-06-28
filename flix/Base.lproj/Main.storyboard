@@ -112,6 +112,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="moviesCollectionPosterView" destination="J89-Js-f65" id="7Oc-i6-mc0"/>
+                                            <segue destination="bVB-mW-sUn" kind="show" id="5lm-fl-ha6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -248,4 +249,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="projector_tabbar_item" width="21" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5lm-fl-ha6"/>
+    </inferredMetricsTieBreakers>
 </document>
