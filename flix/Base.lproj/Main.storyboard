@@ -89,7 +89,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cKm-2N-pxB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6Bj-Cq-HUB">
                                     <size key="itemSize" width="138" height="186"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -226,11 +226,11 @@
             </objects>
             <point key="canvasLocation" x="185" y="485"/>
         </scene>
-        <!--Popular-->
+        <!--Superhero-->
         <scene sceneID="TIa-Qi-e5V">
             <objects>
                 <navigationController id="rAA-yb-WtA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Popular" image="ticket_tabbar_icon" selectedImage="ticket_tabbar_icon" id="Iwr-1Z-ZNt"/>
+                    <tabBarItem key="tabBarItem" title="Superhero" image="projector_tabbar_item" selectedImage="projector_tabbar_item" id="Iwr-1Z-ZNt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kJh-IJ-mFj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -246,6 +246,6 @@
     </scenes>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
-        <image name="ticket_tabbar_icon" width="25" height="25"/>
+        <image name="projector_tabbar_item" width="21" height="25"/>
     </resources>
 </document>
