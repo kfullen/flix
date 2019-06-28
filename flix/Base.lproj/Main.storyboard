@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies-->
+        <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
@@ -44,18 +44,19 @@
                                                     <rect key="frame" x="170" y="85" width="190" height="89"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yuh" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f06-4r-9O1">
                                                     <rect key="frame" x="170" y="32" width="200" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="overviewLabel" destination="UDT-S4-JpX" id="OzA-1Y-6eO"/>
                                             <outlet property="posterView" destination="6wN-ig-ifS" id="GQX-YG-KhI"/>
@@ -73,7 +74,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies" id="Y83-zg-1Vi"/>
+                    <navigationItem key="navigationItem" title="Now Playing" id="Y83-zg-1Vi"/>
                     <connections>
                         <outlet property="movieActivityIndicator" destination="CgK-co-6FR" id="IXw-eL-Hcv"/>
                         <outlet property="moviesSearchBar" destination="rBu-jd-6ek" id="d05-ZN-n8q"/>
@@ -84,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="185" y="1221"/>
         </scene>
-        <!--Movies Grid View Controller-->
+        <!--Superhero-->
         <scene sceneID="Ztv-uz-rzU">
             <objects>
                 <viewController id="7g0-4q-QPQ" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -132,7 +133,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dFc-Sm-nxC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TqC-Qj-u1q"/>
+                    <navigationItem key="navigationItem" title="Superhero" id="TqC-Qj-u1q"/>
                     <connections>
                         <outlet property="collectionView" destination="cKm-2N-pxB" id="jHf-Tw-X3n"/>
                         <outlet property="moviesGridSearchBar" destination="Ckw-5v-3IA" id="dHC-LD-LU8"/>
@@ -160,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1050" y="-407"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Details-->
         <scene sceneID="C4a-09-YdK">
             <objects>
-                <viewController id="bVB-mW-sUn" customClass="DetailsViewController" sceneMemberID="viewController">
+                <viewController title="Details" id="bVB-mW-sUn" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FRS-Ij-er8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,6 +263,6 @@
         <image name="projector_tabbar_item" width="21" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5lm-fl-ha6"/>
+        <segue reference="HzR-cG-9Tl"/>
     </inferredMetricsTieBreakers>
 </document>
