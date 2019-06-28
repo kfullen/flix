@@ -32,7 +32,6 @@
     self.tableView.delegate = self;
     self.moviesSearchBar.delegate = self;
     
-    
     [self fetchMovies];
     
     

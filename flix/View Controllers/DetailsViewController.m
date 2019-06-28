@@ -26,7 +26,6 @@
     NSString *backdropBaseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     NSString *fullBackdropURLString = [backdropBaseURLString stringByAppendingString:backdropURLString];
-    NSLog(@"%@", self.movie[@"title"]);
     
     NSURL *backdropURL = [NSURL URLWithString:fullBackdropURLString];
     

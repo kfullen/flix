@@ -103,6 +103,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="Eys-SA-nH1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviesCollectionViewCell" id="sJm-bd-6DX" customClass="MoviesCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="186"/>
@@ -136,6 +140,7 @@
                     <navigationItem key="navigationItem" title="Superhero" id="TqC-Qj-u1q"/>
                     <connections>
                         <outlet property="collectionView" destination="cKm-2N-pxB" id="jHf-Tw-X3n"/>
+                        <outlet property="gridActivityIndicator" destination="Eys-SA-nH1" id="IwR-4u-xFA"/>
                         <outlet property="moviesGridSearchBar" destination="Ckw-5v-3IA" id="dHC-LD-LU8"/>
                     </connections>
                 </viewController>
@@ -263,6 +268,6 @@
         <image name="projector_tabbar_item" width="21" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HzR-cG-9Tl"/>
+        <segue reference="5lm-fl-ha6"/>
     </inferredMetricsTieBreakers>
 </document>

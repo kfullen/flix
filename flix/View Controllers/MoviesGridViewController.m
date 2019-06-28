@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UISearchBar *moviesGridSearchBar;
 @property (strong, nonatomic) NSArray *gridFilteredMovies;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *gridActivityIndicator;
+
 
 
 @end
@@ -25,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.gridActivityIndicator startAnimating];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.moviesGridSearchBar.delegate = self;
@@ -78,6 +81,8 @@
             
             // Reload your table view data
             [self.collectionView reloadData];
+            
+            [self.gridActivityIndicator stopAnimating];
         }
        
     }];
@@ -93,6 +98,7 @@
     NSString *fullURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullURLString];
+    
     cell.moviesCollectionPosterView.image = nil;
     [cell.moviesCollectionPosterView setImageWithURL:posterURL];
     
