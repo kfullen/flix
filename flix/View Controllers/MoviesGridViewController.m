@@ -113,8 +113,6 @@
         }];
         self.gridFilteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
         
-        NSLog(@"%@", self.gridFilteredMovies);
-        
     }
     else {
         self.gridFilteredMovies = self.movies;
@@ -131,6 +129,10 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     self.moviesGridSearchBar.showsCancelButton = NO;
     self.moviesGridSearchBar.text = @"";
+    [self.moviesGridSearchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.moviesGridSearchBar resignFirstResponder];
 }
 
