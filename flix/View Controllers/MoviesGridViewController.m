@@ -11,9 +11,12 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
 
-@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UISearchBarDelegate>
 @property (nonatomic,strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UISearchBar *moviesGridSearchBar;
+@property (strong, nonatomic) NSArray *gridFilteredMovies;
+
 
 @end
 
@@ -24,6 +27,7 @@
     // Do any additional setup after loading the view.
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.moviesGridSearchBar.delegate = self;
     
     [self fetchMovies];
     
@@ -70,6 +74,8 @@
             // Store movies in a property to use elsewhere
             self.movies = dataDictionary[@"results"];
             
+            self.gridFilteredMovies = self.movies;
+            
             // Reload your table view data
             [self.collectionView reloadData];
         }
@@ -81,7 +87,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MoviesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MoviesCollectionViewCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.movies[indexPath.item];
+    NSDictionary *movie = self.gridFilteredMovies[indexPath.item];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullURLString = [baseURLString stringByAppendingString:posterURLString];
@@ -95,10 +101,38 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.movies.count;
+    return self.gridFilteredMovies.count;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        self.gridFilteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.gridFilteredMovies);
+        
+    }
+    else {
+        self.gridFilteredMovies = self.movies;
+    }
+    
+    [self.collectionView reloadData];
+    
+}
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.moviesGridSearchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.moviesGridSearchBar.showsCancelButton = NO;
+    self.moviesGridSearchBar.text = @"";
+    [self.moviesGridSearchBar resignFirstResponder];
+}
 
 #pragma mark - Navigation
 
@@ -108,7 +142,7 @@
     // Pass the selected object to the new view controller.
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.item];
+    NSDictionary *movie = self.gridFilteredMovies[indexPath.item];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;

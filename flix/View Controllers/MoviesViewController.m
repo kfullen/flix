@@ -17,8 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *movieActivityIndicator;
-@property (strong, nonatomic) NSArray *filteredData;
-@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *filteredMovies;
 @property (strong, nonatomic) IBOutlet UISearchBar *moviesSearchBar;
 
 @end
@@ -77,9 +76,8 @@
             // Store movies in a property to use elsewhere
             self.movies = dataDictionary[@"results"];
             
-            self.data = self.movies;
-            self.filteredData = self.data;
-            NSLog(@"filtered movies: %lu",(unsigned long)self.filteredData.count);
+            self.filteredMovies = self.movies;
+            NSLog(@"filtered movies: %lu",(unsigned long)self.filteredMovies.count);
             
             // Reload your table view data
             [self.tableView reloadData];
@@ -94,14 +92,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:
     (NSInteger)section {
-    return self.filteredData.count;
+    return self.filteredMovies.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
     (NSIndexPath *)indexPath {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
-    NSDictionary *movie = self.filteredData[indexPath.row];
+    NSDictionary *movie = self.filteredMovies[indexPath.row];
     
     cell.titleLabel.text = movie[@"title"];
     cell.overviewLabel.text = movie[@"overview"];
@@ -123,13 +121,12 @@
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
             return [evaluatedObject[@"title"] containsString:searchText];
         }];
-        self.filteredData = [self.data filteredArrayUsingPredicate:predicate];
+        self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
         
-        NSLog(@"%@", self.filteredData);
         
     }
     else {
-        self.filteredData = self.data;
+        self.filteredMovies = self.movies;
     }
     
     [self.tableView reloadData];
@@ -154,7 +151,7 @@
     // Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.filteredData[indexPath.row];
+    NSDictionary *movie = self.filteredMovies[indexPath.row];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
