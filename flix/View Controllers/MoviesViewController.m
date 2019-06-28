@@ -136,6 +136,16 @@
     
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.moviesSearchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.moviesSearchBar.showsCancelButton = NO;
+    self.moviesSearchBar.text = @"";
+    [self.moviesSearchBar resignFirstResponder];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
