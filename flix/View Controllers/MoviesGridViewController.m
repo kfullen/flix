@@ -115,10 +115,10 @@
                 NSLog(@"Image was cached so just update the image");
                 cell.moviesCollectionPosterView.image = image;
             }
-        }
-                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
-                                                            // do something for the failure condition
-                                                        }];
+    }
+            failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+                    // do something for the failure condition
+            }];
                                                         
     //cell.moviesCollectionPosterView.image = nil;
     //[cell.moviesCollectionPosterView setImageWithURL:posterURL];
