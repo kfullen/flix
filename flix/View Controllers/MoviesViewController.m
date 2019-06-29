@@ -76,7 +76,6 @@
             self.movies = dataDictionary[@"results"];
             
             self.filteredMovies = self.movies;
-            NSLog(@"filtered movies: %lu",(unsigned long)self.filteredMovies.count);
             
             // Reload your table view data
             [self.tableView reloadData];

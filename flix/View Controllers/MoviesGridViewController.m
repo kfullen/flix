@@ -98,9 +98,30 @@
     NSString *fullURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullURLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:posterURL];
     
-    cell.moviesCollectionPosterView.image = nil;
-    [cell.moviesCollectionPosterView setImageWithURL:posterURL];
+    [cell.moviesCollectionPosterView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+            if (imageResponse) {
+                NSLog(@"Image was NOT cached, fade in image");
+                cell.moviesCollectionPosterView.alpha = 0.0;
+                cell.moviesCollectionPosterView.image = image;
+                
+                //Animate UIImageView back to alpha 1 over 0.3sec
+                [UIView animateWithDuration:1.0 animations:^{
+                    cell.moviesCollectionPosterView.alpha = 1.0;
+                }];
+            }
+            else {
+                NSLog(@"Image was cached so just update the image");
+                cell.moviesCollectionPosterView.image = image;
+            }
+        }
+                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+                                                            // do something for the failure condition
+                                                        }];
+                                                        
+    //cell.moviesCollectionPosterView.image = nil;
+    //[cell.moviesCollectionPosterView setImageWithURL:posterURL];
     
     return cell;
 }
