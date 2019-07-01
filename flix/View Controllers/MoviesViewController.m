@@ -108,6 +108,7 @@
     NSURL *posterURL = [NSURL URLWithString:fullURLString];
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     return cell;
 }
