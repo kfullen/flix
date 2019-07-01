@@ -11,6 +11,8 @@
 		840EF28F22C54D760009476D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EF28E22C54D760009476D /* DetailsViewController.m */; };
 		840EF29222C58F410009476D /* MoviesGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EF29122C58F410009476D /* MoviesGridViewController.m */; };
 		840EF29522C594420009476D /* MoviesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EF29422C594420009476D /* MoviesCollectionViewCell.m */; };
+		845B08DC22C9E184000702B5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845B08DB22C9E184000702B5 /* WebKit.framework */; };
+		845B08DF22C9E20F000702B5 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845B08DE22C9E20F000702B5 /* TrailerViewController.m */; };
 		84ED7EBA22C3EB54006EFABB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED7EB922C3EB54006EFABB /* AppDelegate.m */; };
 		84ED7EC022C3EB54006EFABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED7EBE22C3EB54006EFABB /* Main.storyboard */; };
 		84ED7EC222C3EB54006EFABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84ED7EC122C3EB54006EFABB /* Assets.xcassets */; };
@@ -51,6 +53,9 @@
 		840EF29122C58F410009476D /* MoviesGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesGridViewController.m; sourceTree = "<group>"; };
 		840EF29322C594420009476D /* MoviesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesCollectionViewCell.h; sourceTree = "<group>"; };
 		840EF29422C594420009476D /* MoviesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesCollectionViewCell.m; sourceTree = "<group>"; };
+		845B08DB22C9E184000702B5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		845B08DD22C9E20F000702B5 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
+		845B08DE22C9E20F000702B5 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
 		84ED7EB522C3EB54006EFABB /* flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ED7EB822C3EB54006EFABB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84ED7EB922C3EB54006EFABB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845B08DC22C9E184000702B5 /* WebKit.framework in Frameworks */,
 				B4A8403F8D60ECC5E844F4D8 /* Pods_flix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +114,7 @@
 		29F46987F70D892730526A9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				845B08DB22C9E184000702B5 /* WebKit.framework */,
 				3D831F3C48210D32B50EE911 /* Pods_flix.framework */,
 				DA79246B324779826AD2E745 /* Pods_flixTests.framework */,
 				FF7B7EAD7C61C6B5998ED4DF /* Pods_flixUITests.framework */,
@@ -199,6 +206,8 @@
 				840EF28E22C54D760009476D /* DetailsViewController.m */,
 				840EF29022C58F410009476D /* MoviesGridViewController.h */,
 				840EF29122C58F410009476D /* MoviesGridViewController.m */,
+				845B08DD22C9E20F000702B5 /* TrailerViewController.h */,
+				845B08DE22C9E20F000702B5 /* TrailerViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 				840EF29522C594420009476D /* MoviesCollectionViewCell.m in Sources */,
 				840EF28F22C54D760009476D /* DetailsViewController.m in Sources */,
 				84ED7EBA22C3EB54006EFABB /* AppDelegate.m in Sources */,
+				845B08DF22C9E20F000702B5 /* TrailerViewController.m in Sources */,
 				84ED7EF222C42A91006EFABB /* MovieCell.m in Sources */,
 				84ED7EEC22C3FFCA006EFABB /* MoviesViewController.m in Sources */,
 				840EF29222C58F410009476D /* MoviesGridViewController.m in Sources */,
