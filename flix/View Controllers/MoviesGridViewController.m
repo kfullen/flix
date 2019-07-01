@@ -168,12 +168,13 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     NSDictionary *movie = self.gridFilteredMovies[indexPath.item];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
+    
+    // Pass the selected object to the new view controller.
     detailsViewController.movie = movie;
 }
 

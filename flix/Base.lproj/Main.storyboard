@@ -238,15 +238,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEq-LT-o1E">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <connections>
+                                            <segue destination="Tn1-1u-8B7" kind="presentation" id="Cqf-WI-5sh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.93087037852112675" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4Zh-PE-ZjQ" firstAttribute="leading" secondItem="2zY-80-2Ht" secondAttribute="trailing" constant="8" id="3Bi-WK-IfK"/>
                                     <constraint firstItem="Ger-Mf-Q4K" firstAttribute="centerX" secondItem="26t-AP-o3v" secondAttribute="centerX" id="5Eb-7U-l54"/>
                                     <constraint firstAttribute="trailing" secondItem="uk2-n6-Zd8" secondAttribute="trailing" constant="8" id="69s-7e-M4n"/>
+                                    <constraint firstItem="HEq-LT-o1E" firstAttribute="top" secondItem="26t-AP-o3v" secondAttribute="top" id="8A6-bB-vDU"/>
                                     <constraint firstItem="Ger-Mf-Q4K" firstAttribute="centerX" secondItem="xSd-LR-NSS" secondAttribute="centerX" id="BE4-KH-Tsq"/>
                                     <constraint firstItem="uk2-n6-Zd8" firstAttribute="top" secondItem="Ger-Mf-Q4K" secondAttribute="bottom" constant="8" id="FLC-H4-rHQ"/>
                                     <constraint firstItem="2zY-80-2Ht" firstAttribute="leading" secondItem="26t-AP-o3v" secondAttribute="leading" constant="16" id="GVk-RQ-ghn"/>
+                                    <constraint firstItem="HEq-LT-o1E" firstAttribute="leading" secondItem="26t-AP-o3v" secondAttribute="leading" id="Ht6-9o-gfk"/>
                                     <constraint firstItem="2zY-80-2Ht" firstAttribute="centerY" secondItem="Ger-Mf-Q4K" secondAttribute="bottom" id="IeG-Ob-1wK"/>
                                     <constraint firstAttribute="trailing" secondItem="xSd-LR-NSS" secondAttribute="trailing" constant="8" id="Kyj-xt-IWf"/>
                                     <constraint firstAttribute="trailing" secondItem="Ger-Mf-Q4K" secondAttribute="trailing" id="PSL-X2-nus"/>
@@ -254,6 +262,8 @@
                                     <constraint firstAttribute="bottom" secondItem="Ger-Mf-Q4K" secondAttribute="bottom" constant="403" id="VRy-o0-hdP"/>
                                     <constraint firstAttribute="trailing" secondItem="4Zh-PE-ZjQ" secondAttribute="trailing" constant="8" id="X8B-yX-4Xd"/>
                                     <constraint firstItem="4Zh-PE-ZjQ" firstAttribute="top" secondItem="uk2-n6-Zd8" secondAttribute="bottom" constant="8" id="Y6n-Wh-ASX"/>
+                                    <constraint firstAttribute="trailing" secondItem="HEq-LT-o1E" secondAttribute="trailing" id="agm-tR-qUu"/>
+                                    <constraint firstItem="uk2-n6-Zd8" firstAttribute="top" secondItem="HEq-LT-o1E" secondAttribute="bottom" constant="8" id="gff-LA-boH"/>
                                     <constraint firstItem="Ger-Mf-Q4K" firstAttribute="leading" secondItem="26t-AP-o3v" secondAttribute="leading" id="iVP-9d-hXZ"/>
                                     <constraint firstItem="Ger-Mf-Q4K" firstAttribute="top" secondItem="26t-AP-o3v" secondAttribute="top" id="idP-gy-kAT"/>
                                     <constraint firstItem="xSd-LR-NSS" firstAttribute="leading" secondItem="26t-AP-o3v" secondAttribute="leading" constant="8" id="pD3-pO-rkG"/>
@@ -279,7 +289,7 @@
                         <outlet property="DetailsReleaseLabel" destination="4Zh-PE-ZjQ" id="H4m-YY-Q15"/>
                         <outlet property="DetailsTitleLabel" destination="uk2-n6-Zd8" id="AZk-Lx-oLl"/>
                         <outlet property="SmallDetailsImageView" destination="2zY-80-2Ht" id="MIN-1h-b3q"/>
-                        <segue destination="Tn1-1u-8B7" kind="presentation" id="EnT-Hj-0af"/>
+                        <outlet property="trailerButton" destination="HEq-LT-o1E" id="yaV-rt-bdX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wl-GQ-euE" userLabel="First Responder" sceneMemberID="firstResponder"/>

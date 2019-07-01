@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *DetailsTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DetailsOverviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DetailsReleaseLabel;
+@property (weak, nonatomic) IBOutlet UIButton *trailerButton;
 
 @end
 
@@ -60,9 +61,10 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
+    TrailerViewController *trailerViewController = [segue destinationViewController];
+    
     // Pass the selected object to the new view controller.
     NSDictionary *trailerMovie = self.movie;
-    TrailerViewController *trailerViewController = [segue destinationViewController];
     trailerViewController.trailerMovie = trailerMovie;
     
     

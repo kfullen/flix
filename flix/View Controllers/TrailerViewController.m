@@ -25,6 +25,7 @@
     NSString *movieId = self.trailerMovie[@"id"];
     NSString *apiKey = @"7230e97fd50e8192bb968d8ac1d2e0ef";
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@/videos?api_key=%@&language=en-US]",movieId,apiKey];
+    NSLog(@"retrieving key: %@",urlString);
     
     // Convert the url String to a NSURL object.
     NSURL *url = [NSURL URLWithString:urlString];
@@ -42,12 +43,17 @@
         }
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSLog(@"data is stored");
             
             // Store movies in a property to use elsewhere
             
-            NSDictionary *results = dataDictionary[@"results"];
-            NSString *key = results[@"key"];
+            NSArray *results = dataDictionary[@"results"];
+            NSDictionary *trailer = results[0];
+            NSString *key = trailer[@"key"];
             NSString *videoURLString = [NSString stringWithFormat:@"https://www.youtube.com/watch?v=\%@",key];
+            
+            NSLog(@"printing video url: %@",videoURLString);
+            
             NSURL *videoURL = [NSURL URLWithString:videoURLString];
             
             // Place the URL in a URL Request.
