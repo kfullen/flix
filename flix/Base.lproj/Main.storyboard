@@ -304,17 +304,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-He-tlj">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-He-tlj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsB-Vm-c7g">
+                                <rect key="frame" x="5" y="10" width="75" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Hfl-CE-8Ih"/>
+                                    <constraint firstAttribute="height" constant="40" id="u3o-dn-lfb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissTrailerButton:" destination="Tn1-1u-8B7" eventType="touchUpInside" id="m5q-tR-Bk1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HsB-Vm-c7g" firstAttribute="leading" secondItem="CG1-IQ-eE8" secondAttribute="leading" constant="5" id="4aW-bA-kQh"/>
+                            <constraint firstAttribute="trailing" secondItem="cIe-He-tlj" secondAttribute="trailing" id="PJw-YJ-b4i"/>
+                            <constraint firstItem="cIe-He-tlj" firstAttribute="leading" secondItem="CG1-IQ-eE8" secondAttribute="leading" id="Q3l-Rn-Wr1"/>
+                            <constraint firstItem="HsB-Vm-c7g" firstAttribute="top" secondItem="CG1-IQ-eE8" secondAttribute="top" constant="10" id="Vht-4U-R5A"/>
+                            <constraint firstAttribute="bottom" secondItem="cIe-He-tlj" secondAttribute="bottom" id="hBd-hh-fnU"/>
+                            <constraint firstItem="cIe-He-tlj" firstAttribute="top" secondItem="CG1-IQ-eE8" secondAttribute="top" id="rdB-RC-1wz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nlX-8t-JMZ"/>
                     </view>
                     <connections>
