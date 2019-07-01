@@ -40,7 +40,7 @@ Here's a walkthrough of implemented user stories:
 
 http://g.recordit.co/9Teoyv5fyK.gif
 
-GIF created with RecordIt.
+GIF created with RecordIt
 
 ## Notes
 
